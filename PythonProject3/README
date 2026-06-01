@@ -39,12 +39,13 @@ pip install -r requirements.txt
 4. Установить ChromeDriver
 
 Автоматически:
-pip install webdriver-manager
-
-Вручную (если автоустановка не сработала):
-1. Узнайте версию Chrome.
-2. Скачайте ChromeDriver с официального сайта.
-3. Положите файл `chromedriver.exe` в корень проекта
+pip install webdriver-manager == 3.9.0
+Invoke-WebRequest -Uri "https://storage.googleapis.com/chrome-for-testing-public/148.0.7778.179/win64/chromedriver-win64.zip" -OutFile "$env:TEMP\chromedriver.zip"             
+Expand-Archive -Path "$env:TEMP\chromedriver.zip" -DestinationPath "$env:TEMP\chromedriver"  
+Copy-Item "$env:TEMP\chromedriver\chromedriver-win64\chromedriver.exe" -Destination "C:\Users\user\PycharmProjects\PythonProject3\chromedriver.exe" -Force                   
+Remove-Item "$env:TEMP\chromedriver" -Recurse -Force                
+Remove-Item "$env:TEMP\chromedriver.zip" -Force            
+Write-Host "chromedriver.exe успешно установлен!" -ForegroundColor Green                                                                                                     
 
 5. Запустить тесты
 
