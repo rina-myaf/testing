@@ -39,7 +39,7 @@ pip install -r requirements.txt
 4. Установить ChromeDriver
 
 Автоматически:
-pip install webdriver-manager == 3.9.0
+
 Invoke-WebRequest -Uri "https://storage.googleapis.com/chrome-for-testing-public/148.0.7778.179/win64/chromedriver-win64.zip" -OutFile "$env:TEMP\chromedriver.zip"             
 Expand-Archive -Path "$env:TEMP\chromedriver.zip" -DestinationPath "$env:TEMP\chromedriver"  
 Copy-Item "$env:TEMP\chromedriver\chromedriver-win64\chromedriver.exe" -Destination "C:\Users\user\PycharmProjects\PythonProject3\chromedriver.exe" -Force                   
